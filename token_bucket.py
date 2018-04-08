@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Spyder Editor
-
-This is a temporary script file.
+令牌桶（单速单桶）
 """
 
 from time import time
@@ -41,8 +39,7 @@ if __name__ == '__main__':
     start = time()
     for i in test_list:
         while not rate_limit.consume():
-            pass
-            
+            pass            
         print(i)
     end = time()
     print('平均速度为 {:.2f}次/s'.format(100/(end-start)))
