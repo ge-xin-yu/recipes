@@ -44,3 +44,7 @@ if __name__ == '__main__':
         print(i)
     end = time()
     print('平均速度为 {:.2f}次/s'.format(100/(end-start)))
+    
+    
+    
+    
