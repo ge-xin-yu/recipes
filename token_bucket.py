@@ -8,13 +8,14 @@ from threading import Lock
 
 class token_bucket:
     def __init__(self, rate):
-        #当在多线程中使用时，使用锁
+        #当在多线程中使用时，使用锁；如普通环境，此锁无需。
         self._consume_lock = Lock()
         self.rate = rate
         self.tokens = 0
         self.last = 0
         
     def consume(self, amount=1):
+        #对于非多线程环境，不必增加以下加锁语句。
         with self._consume_lock:            
             now = time()
             if self.last == 0:
@@ -43,13 +44,3 @@ if __name__ == '__main__':
         print(i)
     end = time()
     print('平均速度为 {:.2f}次/s'.format(100/(end-start)))
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
