@@ -15,7 +15,7 @@ class token_bucket:
         self.last = 0
         
     def consume(self, amount=1):
-        #对于非多线程环境，不必增加以下加锁语句。
+        #对于非多线程环境，不必增加以下加锁语句；如是，需加锁，以防止多个线程同时对以下参数进行修改。
         with self._consume_lock:            
             now = time()
             if self.last == 0:
