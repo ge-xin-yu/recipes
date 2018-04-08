@@ -36,7 +36,7 @@ class token_bucket:
 if __name__ == '__main__':
     test_list = [x for x in range(100)]
     #类初始化的值，比如50，应与打印结果一致
-    rate_limit = leaky_bucket(50)
+    rate_limit = token_bucket(50)
     start = time()
     for i in test_list:
         while not rate_limit.consume():
