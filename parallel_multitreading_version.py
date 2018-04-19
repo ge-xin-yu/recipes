@@ -56,34 +56,5 @@ if __name__ == '__main__':
     start = time()
     main()
     end = time()
-    print('线程数：{}个\n总耗时：{:.2f} 秒'.format(thread_pool_size,end-start))
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    print('线程数：{}个\n总耗时：{:.2f} 秒'.format(thread_pool_size,end-start))  
+ 
