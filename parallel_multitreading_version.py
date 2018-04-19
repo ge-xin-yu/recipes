@@ -29,7 +29,6 @@ header = {'User-Agent': 'Mozilla/5.0'}
 #自定义线程数
 thread_pool_size = 10
 work_queue = Queue()
-
     
 def worker(work_queue):
     while not work_queue.empty():
@@ -44,8 +43,8 @@ def main():
         thread.start()
     #注意队列堵塞要在线程堵塞之前
     work_queue.join()
-    #使用while循环，可以在堵塞线程的同时清空url列表，释放内存。当然也可以使用
-    #for循环堵塞，但无法释放url列表所占内存。
+    #使用while循环，可以在堵塞线程的同时清空url列表，释放内存。
+    #当然也可以使用for循环堵塞，但缺点是无法释放url列表所占内存。
     while threads:
         threads.pop().join()   
  
