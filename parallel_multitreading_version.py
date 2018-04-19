@@ -46,7 +46,8 @@ def main():
     #使用while循环，可以在堵塞线程的同时清空url列表，释放内存。
     #当然也可以使用for循环堵塞，但缺点是无法释放url列表所占内存。
     while threads:
-        threads.pop().join()   
+    #此处pop方法承担了两个功能，在返回一个线程对象的同时，删除此对象。
+    threads.pop().join()   
  
 #测试脚本
 if __name__ == '__main__':
