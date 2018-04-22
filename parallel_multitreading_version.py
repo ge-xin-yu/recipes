@@ -40,6 +40,10 @@ def worker(work_queue):
 
 def main():
     work_queue = Queue()
+
+    for url in URLS:    
+       work_queue.put(url)
+       
     threads = [Thread(target=worker, args=(work_queue,)) for _ in range(THREAD_POOL_SIZE)]
     for thread in threads:
         thread.start()
@@ -53,8 +57,7 @@ def main():
  
 #测试脚本
 if __name__ == '__main__':
-    for url in URLS:    
-        work_queue.put(url)
+   
     start = time()
     main()
     end = time()
