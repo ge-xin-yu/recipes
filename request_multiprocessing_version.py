@@ -40,7 +40,7 @@ def main():
     for url in URLS:    
         work_queue.put(url)
         
-    processes = [Thread(target=worker, args=(work_queue,)) for _ in range(PROCESS_POOL_SIZE)]
+    processes = [Process(target=worker, args=(work_queue,)) for _ in range(PROCESS_POOL_SIZE)]
     
     for process in processes:
         process.start()
@@ -53,34 +53,5 @@ if __name__ == '__main__':
     start = time()
     main()
     end = time()
-    print('进程数：{}个\n总耗时：{:.2f} 秒'.format(PROCESS_POOL_SIZE,end-start))
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    print('进程数：{}个\n总耗时：{:.2f} 秒'.format(PROCESS_POOL_SIZE,end-start))    
     
