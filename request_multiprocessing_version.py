@@ -30,7 +30,7 @@ PROCESS_POOL_SIZE = 10
 def worker(work_queue):
     while not work_queue.empty():
         url = work_queue.get()
-        r = requests.get(url, headers=header)        
+        r = requests.get(url, headers=HEADER)        
 
 def main(): 
     #注意多进程的队列和多线程的不同，其队列无需多线程中堵塞操作。因多进程并不共享内存，
