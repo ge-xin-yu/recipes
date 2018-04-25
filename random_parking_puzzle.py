@@ -11,7 +11,7 @@ import random
 
 #道路长度及车辆宽度定义为全局变量
 ROAD_LENGTH = 100
-VEHICLE_WIDTH = 20
+VEHICLE_WIDTH = 4.5
 
 #low默认参数为0，之所以写在后面，是方便主函数调用，参数中可以不必写此参数。
 def parking(high, low=0):
