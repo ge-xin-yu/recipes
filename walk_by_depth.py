@@ -42,8 +42,7 @@ def walk_by_depth(root_dir, depth=1):
             """
         total_size = sum([getsize(join(root,file)) for file in files])
         print('文件总大小 {:.2f}KB'.format(total_size/1024))
-    return 0
-    
+    return 0    
 
 def main():
     folder_path = "d:\\bios"
@@ -51,9 +50,6 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
-
-
-        
+    main()        
     
     
