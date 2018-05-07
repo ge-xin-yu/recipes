@@ -41,8 +41,7 @@ def get_counts_of_visited(url, session):
     
     :param url: 保存验证有效次数链接地址
     :param session: 网站会话，携带cookies
-    :rtype: int
-    
+    :rtype: int    
     """
     target_page = session.get(url, headers=HEADER)
     soup = BeautifulSoup(target_page.text, 'lxml')
@@ -55,7 +54,7 @@ def proxy_validate(host):
     """
     验证代理服务器有效性
     
-    :param host: 代理服务器主机地址；形式为host:port
+    :param host: 代理服务器主机地址；形式为 {host:port}
     :return: 代理服务器是否有效的打印信息。
     :rtype: str    
     """
