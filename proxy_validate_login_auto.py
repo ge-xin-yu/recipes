@@ -147,7 +147,7 @@ if __name__ == "__main__" :
     url_after_login = 'http://bbs.pinggu.org/home.php?mod=spacecp&ac=credit&op=log&suboperation=creditrulelog'
     #模拟自动登录
     login_data = {
-            'username': '网吧流浪者', 
+            'username': 'proxy_test', 
             'password': 'd167c5297ee8e068b4e411d32d70c3d9'
     }   
     session = requests.Session()
