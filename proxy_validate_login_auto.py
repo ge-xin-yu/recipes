@@ -45,7 +45,7 @@ def get_counts_of_visited(url, session):
     """
     target_page = session.get(url, headers=HEADER)
     soup = BeautifulSoup(target_page.text, 'lxml')
-    visited_tag = nth_of_nextsibling(soup.find('td', string='访问推广'), 4)
+    visited_tag = nth_of_nextsibling(soup.find('td', string='visited'), 4)
     visited_counts = int(visited_tag.get_text())
     return visited_counts
 
@@ -63,7 +63,7 @@ def proxy_validate(host):
     domain='http://'+host
     proxy={'http':host}
     url='http://bbs.pinggu.org/?fromuid=9753530'
-    regex=re.compile(r"经管之家")
+    regex=re.compile(r"jghome")
     try:
         r=requests.get(url, headers=header, proxies=proxy, timeout=timeout)
         r.raise_for_status()
