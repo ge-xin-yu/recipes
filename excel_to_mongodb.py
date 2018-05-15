@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 ----------------------------------------------------------
-    FileName: excel_to_mongodb
-    Description:读取excel文件指定字段，并存入MongoDB数据库.
-    Author: LaoG
+    FileName:       excel_to_mongodb
+    Description:    读取excel文件指定字段，并存入MongoDB数据库.
+    Author:         LaoG
 ----------------------------------------------------------
 """
 
@@ -95,7 +95,5 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
-    
     
     
