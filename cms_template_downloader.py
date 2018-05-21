@@ -14,7 +14,8 @@ from bs4 import BeautifulSoup
 
 
 def get_html_text(url):
-    """
+    """页面获取
+    
     :param url: 总页面链接
     :return: 返回页面文本
     :rtype: str
@@ -31,7 +32,8 @@ def get_html_text(url):
 
 
 def page_parse(base_url, page_text):
-    """
+    """页面解析
+    
     :param page_text: 页面文本，用于解析。
     :return: 返回全部下载链接
     :rtype: list
@@ -63,7 +65,8 @@ def page_parse(base_url, page_text):
 
 
 def file_download(link, file_name):
-    """
+    """文件下载
+    
     :param link: 待下载链接。
     :return:
     """
