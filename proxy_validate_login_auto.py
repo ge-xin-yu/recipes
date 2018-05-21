@@ -146,9 +146,9 @@ if __name__ == "__main__" :
     url_after_login = 'http://bbs.pinggu.org/home.php?mod=spacecp&ac=credit&op=log&suboperation=creditrulelog'
     #模拟自动登录
     login_data = {
-            'username': 'proxy_test', 
-            'password': 'd167c5297ee8e068b4e411d32d70c3d9'
-    }   
+        'username': 'proxy_test', 
+        'password': 'd167c5297ee8e068b4e411d32d70c3d9'
+    }
     session = requests.Session()
     r = session.post(login_url, data=login_data)
     #通过cookies值判断是否成功登录。网站返回cookies包含两个键，i分别为sso_hash、sso_hash_low.
