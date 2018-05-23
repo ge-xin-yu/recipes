@@ -16,8 +16,7 @@ import re
 HEADER = {'User-Agent': 'Mozilla/5.0'}
 
 def get_html_text(url):
-    """
-    请求页面并获取页面。    
+    """请求页面并获取页面。    
     
     参数：
         url: 信息数据请求地址
@@ -41,8 +40,7 @@ def get_html_text(url):
         return None    
 
 def get_stock_info(page):
-    """
-    解析页面并获取股票名称和代码
+    """解析页面并获取股票名称和代码
     
     参数：
         page: 页面文本
@@ -69,13 +67,11 @@ def get_stock_info(page):
 def main():
     #记录股票总数量
     count = 0
-    url = "http://quote.eastmoney.com/stocklist.html"
-       
+    url = "http://quote.eastmoney.com/stocklist.html"       
     stock = {}
     page = get_html_text(url)    
     if page:
-        stock = get_stock_info(page)   
-        
+        stock = get_stock_info(page)           
     #写入文件
     with open('d://stock.txt', 'w', encoding='utf-8') as f:
         for stock_name, stock_code in stock.items():
