@@ -7,8 +7,7 @@
 ----------------------------------------------
 """
 from selenium import webdriver
-#以下一句可以不导入，原因是在webdriver文件夹内的初始化文件已经导入,
-#并重命名为FirefoxOptions. 但导入的是相对路径，因此引用时必须加前缀
+#以下一句可以不导入，原因是在webdriver文件夹内的初始化文件已经导入,#并重命名为FirefoxOptions. 但导入的是相对路径，因此引用时必须加前缀
 #完整的引用方法为webdriver.FirefoxOptions
 #from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.by import By
@@ -126,7 +125,7 @@ def get_result(result_queue):
     num = 0
     #daemon线程退出时，不会执行close()关闭文件。因此缓冲区数据不会写入文件。解决方法有二：
     #1、使用flush()方法；
-    #2、打开文件时设置buffering=1,配置行缓冲模式。所谓行缓存，意指遇到换行符即写入文件。
+    #2、打开文件时设置buffering=1,配置行缓冲模式。所谓行缓冲，指遇到换行符即写入文件。
     with open('d:/stock_watches.txt', 'wt', buffering=1) as f:
         while True:
             num += 1
@@ -151,7 +150,7 @@ def main():
     #注意这儿不能使用map方法，因map方法是堵塞的，需等待全部任务完成之后才会继续执行其后代码，
     #其后的监控线程不会立即启动，map_async在这儿是合适的，此方法不会堵塞其后线程启动，只会
     #堵塞在join()方法出。
-    #另外，此处亦不可使用with关键字。异步调用不能使用with关键字，apply_async同理。测试发
+    #另外，此处亦不可使用with关键字。异步调用不能使用with关键字，apply_async同理。测试发现
     #如在异步方法使用with关键字，进程池实际上并没有启动。主线程会立即退出。因此需手动实现堵塞。
     pool.map_async(get_watch, args) 
     #建立监控线程，监控结果队列
