@@ -82,7 +82,7 @@ class GetWatchCount:
 
     @property
     def url(self):  
-        """根据个股上市地点构造个股页面地址.
+        """根据个股上市地点构造其页面地址.
         
         使用@property装饰器，这样做的好处是无需增加实例属性即可象属性一样调用此函数.
         
