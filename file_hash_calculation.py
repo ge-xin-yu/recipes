@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 """
+-----------------------------------------------
     FileName:       file_hash_calculation 
     Description:    计算文件hash值
     Author:         LaoG
+-----------------------------------------------
 """
 
 import os
