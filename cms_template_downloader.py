@@ -2,7 +2,7 @@
 """
 --------------------------------------------------
     File Name：    cms_template_download.py    
-    Description：  模板之家后台模板下载
+    Description：  模板之家后台模板批量下载
     Author：       LaoG
     Date：         2017/5/5
 --------------------------------------------------
@@ -59,8 +59,7 @@ def page_parse(base_url, page_text):
                 down_link = soup.find(title='免费下载')['href']
                 link.append(down_link)
             except:
-                pass
-    
+                pass    
     return link
 
 
